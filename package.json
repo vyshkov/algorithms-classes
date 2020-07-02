@@ -1,0 +1,14 @@
+{
+  "name": "algorithms-classes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:vyshkov/algorithms-classes.git",
+  "author": "vvyshko <vvyshko@talend.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^26.1.0"
+  }
+}
