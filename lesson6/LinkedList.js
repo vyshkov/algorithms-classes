@@ -28,11 +28,31 @@ class LinkedList {
        return this;
     }
 
+    pop() {
+        if (this.tail) {
+            const value = this.tail.data;
+
+            this.remove(this.length - 1);
+    
+            return value;
+        }
+    }
+
     unshift(data) {
         this.head = new Node(data, this.head);
         this.length++;
         
         return this;
+    }
+
+    shift() {
+        if (!this.head) {
+            return;
+        }
+
+        const value = this.head.data;
+        this.remove(0);
+        return value;
     }
 
 
@@ -71,7 +91,7 @@ class LinkedList {
     // 1, 2, x, 4, 5
     remove(index) {
         if (!this.length) {
-            throw new Error('List is empty');
+            return this;
         }
         
         if (index === 0) {
@@ -86,20 +106,22 @@ class LinkedList {
         }
 
         let i = 0;
-        let curentNode = this.head;
+        let currentNode = this.head;
         
         while (i < index - 1) {
-            curentNode = curentNode.next;
+            currentNode = currentNode.next;
             i++;
         }
-
-        if (curentNode.next) {
-            curentNode.next = curentNode.next.next;
-        } else {
-            curentNode.next = null;
-            this.tail = null
+        //      c
+        // 1 -> 2 -> 3 -> null
+        if (currentNode.next) {
+            currentNode.next = currentNode.next.next;
+        } 
+        if (!currentNode.next) {
+            this.tail = currentNode; 
         }
-
+        // curentNode.next -> null
+        
         this.length--;
         
         return this;
