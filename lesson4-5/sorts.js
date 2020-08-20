@@ -240,7 +240,7 @@ function countingSort(arr = []) { // O(kn) => k = unique elements, O(n) memory
     return res;
 }
 
-console.log(countingSort([1,1,0,5,1,1,2,2,2,1,1]));
+//console.log(countingSort([1,1,0,5,1,1,2,2,2,1,1]));
 
 
 // [ 12, 22, 10, 5 ]
@@ -269,7 +269,7 @@ function getNthDigit(num, index) {
     return Math.floor(num / Math.pow(10, index)) % 10
 }
 
-console.log('test', getNthDigit(123, 234234));
+//console.log('test', getNthDigit(123, 234234));
 
 function getMaxCountOfDigitsInArray(arr = [11, 321, 55555, 12]) { // 5
     let max = 1;
